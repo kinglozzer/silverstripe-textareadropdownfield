@@ -52,6 +52,7 @@ const TextareaDropdownField = (props) => {
         value={content}
         onChange={(e) => setContent(e.target.value)}
         type="textarea"
+        rows="1"
       />
       <InputGroupButtonDropdown
         name={dropdownField.name}
