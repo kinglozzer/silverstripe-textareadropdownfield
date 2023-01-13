@@ -1,4 +1,4 @@
 // Legacy Entwine wrapper
-require('legacy/entwine/TextDropdownField.entwine.js');
+require('legacy/entwine/TextareaDropdownField.entwine.js');
 // Boot entrypoint
 require('boot');

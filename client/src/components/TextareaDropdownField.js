@@ -9,7 +9,7 @@ import {
   InputGroupButtonDropdown
 } from 'reactstrap';
 
-const TextDropdownField = (props) => {
+const TextareaDropdownField = (props) => {
   const { textField, dropdownField, onAutofill } = props;
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [content, setContent] = useState(textField.value);
@@ -51,6 +51,7 @@ const TextDropdownField = (props) => {
         name={textField.name}
         value={content}
         onChange={(e) => setContent(e.target.value)}
+        type="textarea"
       />
       <InputGroupButtonDropdown
         name={dropdownField.name}
@@ -76,4 +77,4 @@ const TextDropdownField = (props) => {
   );
 };
 
-export default fieldHolder(TextDropdownField);
+export default fieldHolder(TextareaDropdownField);

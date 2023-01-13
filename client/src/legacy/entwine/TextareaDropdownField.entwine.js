@@ -4,13 +4,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 jQuery.entwine('ss', ($) => {
-  $('.js-injector-boot .form__field-holder .text-dropdown-field').entwine({
+  $('.js-injector-boot .form__field-holder .textarea-dropdown-field').entwine({
     onmatch() {
-      const Component = loadComponent('TextDropdownField');
+      const Component = loadComponent('TextareaDropdownField');
       const schemaState = this.data('state');
 
       const setValue = (fieldName, value) => {
-        const input = document.querySelector(`input[name="${fieldName}"]`);
+        const input = document.querySelector(`input[name="${fieldName}"], textarea[name="${fieldName}"]`);
 
         if (!input) {
           return;

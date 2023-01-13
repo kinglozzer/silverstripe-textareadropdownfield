@@ -1,6 +1,6 @@
 {
-    "name": "adrhumphreys/silverstripe-textdropdownfield",
-    "description": "A text field combined with a dropdown field.",
+    "name": "kinglozzer/silverstripe-textareadropdownfield",
+    "description": "Fork of silverstripe-textdropdownfield",
     "type": "silverstripe-vendormodule",
     "keywords": [
         "silverstripe",
@@ -19,8 +19,8 @@
     },
     "autoload": {
         "psr-4": {
-            "AdrHumphreys\\TextDropdownField\\": "src/",
-            "AdrHumphreys\\TextDropdownField\\Tests\\": "tests/"
+            "AdrHumphreys\\TextareaDropdownField\\": "src/",
+            "AdrHumphreys\\TextareaDropdownField\\Tests\\": "tests/"
         }
     },
     "extra": {

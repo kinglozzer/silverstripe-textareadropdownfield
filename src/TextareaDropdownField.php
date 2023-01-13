@@ -1,20 +1,20 @@
 <?php
 declare(strict_types=1);
 
-namespace AdrHumphreys\TextDropdownField;
+namespace AdrHumphreys\TextareaDropdownField;
 
 use SilverStripe\Forms\DropdownField;
 use SilverStripe\Forms\FieldGroup;
 use SilverStripe\Forms\FormField;
-use SilverStripe\Forms\TextField;
+use SilverStripe\Forms\TextareaField;
 
-class TextDropdownField extends FieldGroup
+class TextareaDropdownField extends FieldGroup
 {
     protected $schemaDataType = FormField::SCHEMA_DATA_TYPE_CUSTOM;
 
-    protected $schemaComponent = 'TextDropdownField';
+    protected $schemaComponent = 'TextareaDropdownField';
 
-    private TextField $textField;
+    private TextareaField $textField;
 
     private DropdownField $dropdownField;
 
@@ -25,7 +25,7 @@ class TextDropdownField extends FieldGroup
         string $dropdownRelation,
         array $dropdownSource
     ) {
-        $this->textField = TextField::create($textRelation);
+        $this->textField = TextareaField::create($textRelation);
         $this->dropdownField = DropdownField::create($dropdownRelation)->setSource($dropdownSource);
 
         $fields = [
@@ -34,12 +34,12 @@ class TextDropdownField extends FieldGroup
         ];
 
         $this->setName($name)->setValue('');
-        $this->addExtraClass('text-dropdown-field');
+        $this->addExtraClass('textarea-dropdown-field');
 
         parent::__construct($title, $fields);
     }
 
-    public function getTextField(): TextField
+    public function getTextField(): TextareaField
     {
         return $this->textField;
     }
