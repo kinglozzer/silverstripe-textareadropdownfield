@@ -15,6 +15,7 @@ const TextareaDropdownField = (props) => {
   const [content, setContent] = useState(textField.value);
   const [dropdown, setDropdown] = useState(dropdownField.value);
   const dropdownOptions = dropdownField.source;
+  const textareaRows = textField.data.rows || 1;
 
   useEffect(() => {
     setContent(textField.value);
@@ -52,7 +53,7 @@ const TextareaDropdownField = (props) => {
         value={content}
         onChange={(e) => setContent(e.target.value)}
         type="textarea"
-        rows="1"
+        rows={textareaRows}
       />
       <InputGroupButtonDropdown
         name={dropdownField.name}
