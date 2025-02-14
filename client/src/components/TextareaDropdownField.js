@@ -41,7 +41,7 @@ const TextareaDropdownField = (props) => {
     onAutofill(dropdownField.name, dropdown);
   }, [dropdown]);
 
-  const selectedItem = dropdownOptions.find(option => option.value == dropdown);
+  const selectedItem = dropdownOptions.find(option => option.value === dropdown);
   // This handles the case where the selected item isn't
   // passed through as the source item as it's been removed
   const selectedTitle = selectedItem ? selectedItem.title : dropdown;
@@ -51,7 +51,10 @@ const TextareaDropdownField = (props) => {
       <Input
         name={textField.name}
         value={content}
-        onChange={(e) => setContent(e.target.value)}
+        onChange={e => {
+          props.onChange?.(e);
+          setContent(e.target.value);
+        }}
         type="textarea"
         rows={textareaRows}
       />
@@ -70,7 +73,10 @@ const TextareaDropdownField = (props) => {
               dangerouslySetInnerHTML={{ __html: option.title }}
               value={option.value}
               disabled={option.disabled}
-              onClick={() => setDropdown(option.value)}
+              onClick={e => {
+                props.onChange?.(e);
+                setDropdown(option.value);
+              }}
             />
           ))}
         </DropdownMenu>
